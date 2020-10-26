@@ -111,6 +111,7 @@ class Config
         if ($key == "ACCESS_TOKEN") { 
             $user = $this->getUserId($value);
             parent::set('USER_ID', $user['id']);
+            parent::set('COUNTRY_ID', $user['country_id']);
         }
         
         if (parent::get('CLIENT_ID') != "" && parent::get('CLIENT_SECRET') != "" && empty(parent::get('ACCESS_TOKEN'))) {
@@ -189,5 +190,7 @@ class Config
         return $response['body'];
     }
 
-
+    public function getData(){
+        return $this->data;
+    }
 }

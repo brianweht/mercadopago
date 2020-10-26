@@ -24,7 +24,7 @@ $payer->address=['zip_code'=>'1111',
                  'street_name'=>'False',
 				 'street_number'=>'123'];			   
 $preference->payer=$payer;
-echo $item->picture_url;
+echo $item->picture_url;die();
 $preference->auto_return="approved";
 $preference->back_urls=['success'=>'https://brian-mercadopago.herokuapp.com/success.php',
                         'pending'=>'https://brian-mercadopago.herokuapp.com/pending.php',

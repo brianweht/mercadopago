@@ -13,7 +13,7 @@ $item->picture_url= 'https://brian-mercadopago.herokuapp.com'.substr($_POST['img
 $item->quantity = $_POST['unit'];
 $item->unit_price = $_POST['price'];
 $preference->items=[$item];
-echo $preference->id;
+
 $payer = new MercadoPago\Payer();
 $payer->email= 'test_user_63274575@testuser.com';
 $payer->name= 'Lalo';

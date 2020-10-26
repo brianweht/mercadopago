@@ -1,4 +1,4 @@
-<?php ini_set("display_errors", 1);
+<?php 
 require('mercadopago/autoload.php');
 MercadoPago\SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398");
 MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
@@ -27,15 +27,15 @@ $preference->payer=$payer;
 
 $preference->auto_return="approved";
 $preference->back_urls=['success'=>'success.php',
-                        'pending'='pending.php',
+                        'pending'=>'pending.php',
 						'failure'=>'failure.php'];						
 $preference->notification_url="https://brian-mercadopago.herokuapp.com/mercadopago_ipn.php";	
-/*
+
 $preference->payment_methods['installments'=>6,
                              'excluded_payment_methods'=>[['id'=>'amex']],
 							 'excluded_payment_types'=>[['id'=>'atm']]];	
 $preference->save();
-var_dump($preference->id);		*/					 
+var_dump($preference->id);						 
 ?><
 !DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

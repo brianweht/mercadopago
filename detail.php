@@ -1,8 +1,41 @@
 <?php
 require('mercadopago/autoload.php');
 MercadoPago\SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398");
+MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
 $preference = new MercadoPago\Preference();
-var_dump($preference);
+$preference->external_reference= "brianweht@hotmail.com";
+
+$item = new MercadoPago\Item();
+$item->id="1234";
+$item->title = $_POST['title'];
+$item->description= "Dispositivo móvil de Tienda e-commerce";
+$item->picture_url= $_POST['img'];
+$item->quantity = $_POST['unit'];
+$item->unit_price = $_POST['price'];
+$preference->items=[$item];
+
+$payer = new MercadoPago\Payer();
+$payer->email= 'test_user_63274575@testuser.com';
+$payer->name= 'Lalo';
+$payer->surname= 'Landa';
+$payer->phone=['area_code'=>'11',
+               'number'=>'22223333'];
+$payer->address=['zip_code'=>'1111',
+                 'street_name'=>'False',
+				 'street_number'=>'123'];			   
+$preference->payer=$payer;
+
+$preference->auto_return="approved";
+$preference->back_urls=['success'=>'success.php',
+                        'pending'='pending.php'>,
+						'failure'=>'failure.php'];						
+$preference->notification_url="https://brian-mercadopago.herokuapp.com/mercadopago_ipn.php";	
+
+$preference->payment_methods['installments'=>6,
+                             'excluded_payment_methods'=>[['id'=>'amex']],
+							 'excluded_payment_types'=>[['id'=>'atm']]];	
+$preference->save();
+var_dump($preference->id);							 
 ?><
 !DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

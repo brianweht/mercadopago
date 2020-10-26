@@ -35,8 +35,8 @@ $preference->payment_methods=['installments'=>6,
                              'excluded_payment_methods'=>[['id'=>'amex']],
 							 'excluded_payment_types'=>[['id'=>'atm']]];	
 $preference->save();					 
-?><
-!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=1024">
@@ -49,6 +49,8 @@ $preference->save();
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
+
+    <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
 
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 

@@ -26,9 +26,9 @@ $payer->address=['zip_code'=>'1111',
 $preference->payer=$payer;
 
 $preference->auto_return="approved";
-$preference->back_urls=['https://brian-mercadopago.herokuapp.com/success'=>'success.php',
-                        'https://brian-mercadopago.herokuapp.com/pending'=>'pending.php',
-						'https://brian-mercadopago.herokuapp.com/failure'=>'failure.php'];						
+$preference->back_urls=['success'=>'https://brian-mercadopago.herokuapp.com/success.php',
+                        'pending'=>'https://brian-mercadopago.herokuapp.com/pending.php',
+						'failure'=>'https://brian-mercadopago.herokuapp.com/failure.php'];						
 $preference->notification_url="https://brian-mercadopago.herokuapp.com/mercadopago_ipn.php";	
 
 $preference->payment_methods=['installments'=>6,

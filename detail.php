@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+require('mercadopago/autoload.php');
+MercadoPago\SDK::setAccessToken("APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398");
+$preference = new MercadoPago\Preference();
+var_dump($preference);
+?><
+!DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=1024">

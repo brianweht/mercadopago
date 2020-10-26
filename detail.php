@@ -13,7 +13,7 @@ $item->picture_url= 'https://brian-mercadopago.herokuapp.com'.substr($_POST['img
 $item->quantity = $_POST['unit'];
 $item->unit_price = $_POST['price'];
 $preference->items=[$item];
-echo $_POST['img'];
+
 $payer = new MercadoPago\Payer();
 $payer->email= 'test_user_63274575@testuser.com';
 $payer->name= 'Lalo';
@@ -24,7 +24,7 @@ $payer->address=['zip_code'=>'1111',
                  'street_name'=>'False',
 				 'street_number'=>'123'];			   
 $preference->payer=$payer;
-echo $item->picture_url;die();
+
 $preference->auto_return="approved";
 $preference->back_urls=['success'=>'https://brian-mercadopago.herokuapp.com/success.php',
                         'pending'=>'https://brian-mercadopago.herokuapp.com/pending.php',

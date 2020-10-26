@@ -9,11 +9,11 @@ $item = new MercadoPago\Item();
 $item->id="1234";
 $item->title = $_POST['title'];
 $item->description= "Dispositivo móvil de Tienda e-commerce";
-$item->picture_url= $_POST['img'];
+$item->picture_url= 'https://brian-mercadopago.herokuapp.com'.substr($_POST['img'], 1);
 $item->quantity = $_POST['unit'];
 $item->unit_price = $_POST['price'];
 $preference->items=[$item];
-
+echo $_POST['img'];
 $payer = new MercadoPago\Payer();
 $payer->email= 'test_user_63274575@testuser.com';
 $payer->name= 'Lalo';

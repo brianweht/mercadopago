@@ -13,6 +13,8 @@ if($_GET['topic']=='payment')
 		  //aca iría la lógica necesaria para procesar los pagos aprobados
 	   }		   
    }
+   else
+	  http_response_code(404);
    
 }
 ?>

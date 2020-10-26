@@ -34,8 +34,7 @@ $preference->notification_url="https://brian-mercadopago.herokuapp.com/mercadopa
 $preference->payment_methods=['installments'=>6,
                              'excluded_payment_methods'=>[['id'=>'amex']],
 							 'excluded_payment_types'=>[['id'=>'atm']]];	
-$preference->save();
-var_dump($preference->id);						 
+$preference->save();					 
 ?><
 !DOCTYPE html>
 <html class="supports-animation supports-columns svg no-touch no-ie no-oldie no-ios supports-backdrop-filter as-mouseuser" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -169,7 +168,7 @@ var_dump($preference->id);
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                    <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>"></script>
                                 </div>
                             </div>
                         </div>

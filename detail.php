@@ -31,7 +31,7 @@ $preference->back_urls=['success'=>'success.php',
 						'failure'=>'failure.php'];						
 $preference->notification_url="https://brian-mercadopago.herokuapp.com/mercadopago_ipn.php";	
 
-$preference->payment_methods['installments'=>6,
+$preference->payment_methods=['installments'=>6,
                              'excluded_payment_methods'=>[['id'=>'amex']],
 							 'excluded_payment_types'=>[['id'=>'atm']]];	
 $preference->save();

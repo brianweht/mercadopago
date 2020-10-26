@@ -6,6 +6,6 @@ if($_GET['topic']=='payment')
    $payment = MercadoPago\Payment::find_by_id($_GET["id"]);
   // $f= fopen('ipn.txt', 'wb');
   // fwrite($f, json_encode($_REQUEST));
-  json_encode($payment);
+  echo json_encode($payment);
 }
 ?>
